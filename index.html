@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swachh Bharat Dashboard</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e8449;
+      color: #fff;
+      padding: 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 5px;
+    }
+
+    nav {
+      background-color: #27ae60;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #d5f5e3;
+    }
+
+    .container {
+      padding: 30px 40px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 250px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #1e8449;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .chart-container {
+      margin-top: 40px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #145a32;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Swachh Bharat Dashboard</h1>
+    <p>Clean India, Green India</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Reports</a>
+    <a href="#">Volunteers</a>
+    <a href="#">Campaigns</a>
+    <a href="#">About</a>
+  </nav>
+
+  <div class="container">
+    <div class="cards">
+      <div class="card">
+        <h3>Cleanliness Reports</h3>
+        <p id="reportCount">1,254</p>
+      </div>
+      <div class="card">
+        <h3>Active Volunteers</h3>
+        <p id="volunteerCount">3,847</p>
+      </div>
+      <div class="card">
+        <h3>Ongoing Campaigns</h3>
+        <p id="campaignCount">27</p>
+      </div>
+      <div class="card">
+        <h3>New Zones Cleaned</h3>
+        <p id="zonesCount">112</p>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <h3 style="color: #1e8449; text-align: center;">Monthly Cleanliness Activity</h3>
+      <canvas id="cleanCha
